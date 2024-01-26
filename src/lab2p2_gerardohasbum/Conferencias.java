@@ -57,7 +57,7 @@ public class Conferencias {
 
     @Override
     public String toString() {
-        return titulo + "\n Conferencista: " + conf + "\n Fecha: " + fecha + "\n Duracion: " + dur + "\n Enlace:" + enlace;
+        return titulo + "\n Conferencista: " + conf + "\n Fecha: " + fecha + "\n Duracion: " + dur + " horas\n Enlace:" + enlace;
     }
     
 }

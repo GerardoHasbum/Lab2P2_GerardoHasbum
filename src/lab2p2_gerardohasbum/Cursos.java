@@ -47,7 +47,7 @@ public class Cursos {
 
     @Override
     public String toString() {
-        return titulo + "\n Instructor: " + inst + "\n Duracion: " + dur + "\n Plataforma: " + plat;
+        return titulo + "\n Instructor: " + inst + "\n Duracion: " + dur + " semanas\n Plataforma: " + plat;
     }
     
     

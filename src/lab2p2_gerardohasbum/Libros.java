@@ -3,11 +3,11 @@ public class Libros {
     
     String titulo;
     String autor;
-    char genero;
+    String genero;
     String año;
     char dispo;
 
-    public Libros(String titulo, String autor, char genero, String año, char dispo) {
+    public Libros(String titulo, String autor, String genero, String año, char dispo) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
@@ -31,11 +31,11 @@ public class Libros {
         this.autor = autor;
     }
 
-    public char getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
