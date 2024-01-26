@@ -223,7 +223,8 @@ public class Lab2P2_GerardoHasbum {
                                     fecha = sc.nextLine();
                                     System.out.println("Ingrese la duracion en horas: ");
                                     duracion = sc.nextInt();
-                                    System.out.println("Ingrese el enlacede la conferencia: ");
+                                    System.out.println("Ingrese el enlace de la conferencia: ");
+                                    sc.nextLine();
                                     enlace = sc.nextLine();
 
                                     Conferencias.add(new Conferencias(titulo, autor, fecha, duracion, enlace));
@@ -342,7 +343,8 @@ public class Lab2P2_GerardoHasbum {
                                     fecha = sc.nextLine();
                                     System.out.println("Ingrese la duracion en horas: ");
                                     duracion = sc.nextInt();
-                                    System.out.println("Ingrese el enlacede la conferencia: ");
+                                    System.out.println("Ingrese el enlace de la conferencia: ");
+                                    sc.nextLine();
                                     enlace = sc.nextLine();
 
                                     Conferencias.add(new Conferencias(titulo, autor, fecha, duracion, enlace));
@@ -406,6 +408,224 @@ public class Lab2P2_GerardoHasbum {
                         }//fin eliminar recursos
 
                         if (res_men == 4) {//modificar recursos
+                            System.out.println("*****SUBMENU*****");
+                            System.out.println("1. Libros");
+                            System.out.println("2. Articulos");
+                            System.out.println("3. Cursos");
+                            System.out.println("4. Conferencias");
+                            System.out.println("5. Cancelar");
+                            res_men = sc.nextInt();
+
+                            switch (res_men) {
+                                case 1://modificacion de libro
+                                    PrintLi(Libros);
+                                    System.out.println("Eliga la posicion del libro que desea modificar: ");
+                                    int pos_li = sc.nextInt();
+                                    if (pos_li >= 0 && pos_li < Libros.size()) {
+                                        Libros temp = Libros.get(pos_li);
+                                        System.out.println(temp.getTitulo());
+                                        System.out.println("1. Titulo");
+                                        System.out.println("2. Autor");
+                                        System.out.println("3. Genero");
+                                        System.out.println("4. Year");
+                                        System.out.println("5. Disposicion");
+                                        System.out.println("6. Cancelar");
+                                        System.out.println("Que le desea cambiar al recurso?: ");
+                                        int pos_cam = sc.nextInt();
+                                        switch (pos_cam) {
+                                            case 1:
+                                                System.out.println("Ingrese el Titulo nuevo: ");
+                                                sc.nextLine();
+                                                String titulo = sc.nextLine();
+                                                ((Libros) Libros.get(pos_li)).setTitulo(titulo);
+                                                break;
+                                            case 2:
+                                                System.out.println("Ingrese el autor nuevo: ");
+                                                sc.nextLine();
+                                                String autor = sc.nextLine();
+                                                ((Libros) Libros.get(pos_li)).setAutor(autor);
+                                                break;
+                                            case 3:
+                                                System.out.println("Ingrese el Genero nuevo: ");
+                                                sc.nextLine();
+                                                String genero = sc.nextLine();
+                                                ((Libros) Libros.get(pos_li)).setGenero(genero);
+                                                break;
+                                            case 4:
+
+                                                System.out.println("Ingrese el Year nuevo: ");
+                                                String año = sc.nextLine();
+                                                ((Libros) Libros.get(pos_li)).setAño(año);
+                                                break;
+
+                                            case 5:
+                                                System.out.println("Ingrese la Disposicion del recurso: ");
+                                                sc.nextLine();
+                                                char dispo = sc.next().charAt(0);
+                                                ((Libros) Libros.get(pos_li)).setDispo(dispo);
+                                        }
+
+                                    } else {
+                                        System.out.println("Esa posicion no existe");
+                                    }
+
+                                    break;//fin modificacion de libro
+
+                                case 2://modificacion articulos
+                                    PrintAr(Articulos);
+                                    System.out.println("Eliga la posicion del Articulo que desea modificar: ");
+                                    int pos_ar = sc.nextInt();
+                                    if (pos_ar >= 0 && pos_ar < Articulos.size()) {
+                                        Articulos temp = Articulos.get(pos_ar);
+                                        System.out.println(temp.getTitulo());
+                                        System.out.println("1. Titulo");
+                                        System.out.println("2. Autor");
+                                        System.out.println("3. Tema");
+                                        System.out.println("4. Fecha");
+                                        System.out.println("5. Disposicion");
+                                        System.out.println("6. Cancelar");
+                                        System.out.println("Que le desea cambiar al recurso?: ");
+                                        int pos_cam = sc.nextInt();
+                                        switch (pos_cam) {
+                                            case 1:
+                                                System.out.println("Ingrese el Titulo nuevo: ");
+                                                sc.nextLine();
+                                                String titulo = sc.nextLine();
+                                                ((Articulos) Articulos.get(pos_ar)).setTitulo(titulo);
+                                                break;
+                                            case 2:
+                                                System.out.println("Ingrese el autor nuevo: ");
+                                                sc.nextLine();
+                                                String autor = sc.nextLine();
+                                                ((Articulos) Articulos.get(pos_ar)).setAutor(autor);
+                                                break;
+                                            case 3:
+                                                System.out.println("Ingrese el tema nuevo: ");
+                                                sc.nextLine();
+                                                String tema = sc.nextLine();
+                                                ((Articulos) Articulos.get(pos_ar)).setTema(tema);
+                                                break;
+                                            case 4:
+                                                System.out.println("Ingrese la fecha nueva: ");
+                                                sc.nextLine();
+                                                String fecha = sc.nextLine();
+                                                ((Articulos) Articulos.get(pos_ar)).setFecha(fecha);
+                                                break;
+                                            case 5:
+                                                System.out.println("Ingrese la disponibilidad del recurso: ");
+                                                sc.nextLine();
+                                                char dispo = sc.next().charAt(0);
+
+                                        }
+
+                                    } else {
+                                        System.out.println("Esa posicion no existe");
+                                    }
+                                    break;//fin modificacion articulos
+                                case 3://modificacion cursos
+
+                                    PrintCu(Cursos);
+                                    System.out.println("Eliga la posicion del Curso que desea modificar: ");
+                                    int pos_cu = sc.nextInt();
+                                    if (pos_cu >= 0 && pos_cu < Cursos.size()) {
+                                        Cursos temp = Cursos.get(pos_cu);
+                                        System.out.println(temp.getTitulo());
+                                        System.out.println("1. Titulo");
+                                        System.out.println("2. Instructor");
+                                        System.out.println("3. Duracion");
+                                        System.out.println("4. PLataforma");
+                                        System.out.println("5. Cancelar");
+                                        System.out.println("Que le desea cambiar al recurso?: ");
+                                        int pos_cam = sc.nextInt();
+                                        switch (pos_cam) {
+                                            case 1:
+                                                System.out.println("Ingrese el titulo nuevo: ");
+                                                sc.nextLine();
+                                                String titulo = sc.nextLine();
+                                                ((Cursos) Cursos.get(pos_cu)).setTitulo(titulo);
+                                                break;
+                                            case 2:
+                                                System.out.println("Ingrese el instructor nuevo: ");
+                                                sc.nextLine();
+                                                String inst = sc.nextLine();
+                                                ((Cursos) Cursos.get(pos_cu)).setInst(inst);
+                                                break;
+                                            case 3:
+                                                System.out.println("Ingrese la duracion en semanas nueva: ");
+                                                sc.nextLine();
+                                                int duracion = sc.nextInt();
+                                                ((Cursos) Cursos.get(pos_cu)).setDur(duracion);
+                                                break;
+                                            case 4:
+
+                                                System.out.println("Ingrese la plataforma nueva: ");
+                                                sc.nextLine();
+                                                String plat = sc.nextLine();
+                                                ((Cursos) Cursos.get(pos_cu)).setPlat(plat);
+                                                break;
+                                        }
+
+                                    } else {
+                                        System.out.println("Esa posicion no existe");
+                                    }
+                                    break;//fin modificacion cursos
+
+                                case 4://modificacion conferencias
+                                    PrintCon(Conferencias);
+                                    System.out.println("Eliga la posicion del libro que desea modificar: ");
+                                    int pos_con = sc.nextInt();
+                                    sc.nextLine();
+                                    if (pos_con >= 0 && pos_con < Conferencias.size()) {
+                                        Conferencias temp = Conferencias.get(pos_con);
+                                        System.out.println(temp.getTitulo());
+                                        System.out.println("1. Titulo");
+                                        System.out.println("2. Confernecista");
+                                        System.out.println("3. Fecha");
+                                        System.out.println("4. Duracion");
+                                        System.out.println("5. Enlace");
+                                        System.out.println("6. Cancelar");
+                                        System.out.println("Que le desea cambiar al recurso?: ");
+                                        int pos_cam = sc.nextInt();
+                                        switch (pos_cam) {
+                                            case 1:
+                                                System.out.println("Ingrese el Titulo nuevo: ");
+                                                sc.nextLine();
+                                                String titulo = sc.nextLine();
+                                                ((Conferencias) Conferencias.get(pos_con)).setTitulo(titulo);
+                                                break;
+                                            case 2:
+                                                System.out.println("Ingrese el Conferencista nuevo: ");
+                                                sc.nextLine();
+                                                String conf = sc.nextLine();
+                                                ((Conferencias) Conferencias.get(pos_con)).setConf(conf);
+                                                break;
+                                            case 3:
+                                                System.out.println("Ingrese la Fecha nueva: ");
+                                                sc.nextLine();
+                                                String fecha = sc.nextLine();
+                                                ((Conferencias) Conferencias.get(pos_con)).setFecha(fecha);
+                                                break;
+                                            case 4:
+
+                                                System.out.println("Ingrese la duracion en horas nueva: ");
+                                                sc.nextLine();
+                                                int dur = sc.nextInt();
+                                                ((Conferencias) Conferencias.get(pos_con)).setDur(dur);
+                                                break;
+
+                                            case 5:
+                                                System.out.println("Ingrese el enlace nuevo: ");
+                                                sc.nextLine();
+                                                String enlace = sc.nextLine();
+                                                ((Conferencias) Conferencias.get(pos_con)).setEnlace(enlace);
+                                        }
+
+                                    } else {
+                                        System.out.println("Esa posicion no existe");
+                                    }
+                                    break;//fin modificar conferencias
+
+                            }
 
                         }//fin modificar recursos
                     }
