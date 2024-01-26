@@ -54,6 +54,11 @@ public class Libros {
     public void setDispo(char dispo) {
         this.dispo = dispo;
     }
+
+    @Override
+    public String toString() {
+        return titulo + "\n Autor: " + autor + "\n Genero: " + genero + "\n Year: " + año + "\n Disponible[s/n]: " + dispo;
+    }
     
     
     
