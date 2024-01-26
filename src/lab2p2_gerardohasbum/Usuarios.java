@@ -37,7 +37,7 @@ public class Usuarios {
 
     @Override
     public String toString() {
-        return "Usuario: " + nom + "\n Contraseña: " + cont + "\n Tipo:" + tipo;
+        return "Usuario: " + nom + "\n Password: " + cont + "\n Tipo:" + tipo;
     }
     
 }
