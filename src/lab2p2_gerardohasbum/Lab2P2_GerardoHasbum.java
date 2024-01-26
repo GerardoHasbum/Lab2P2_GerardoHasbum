@@ -16,7 +16,7 @@ public class Lab2P2_GerardoHasbum {
         ArrayList<Usuarios> Usuarios = new ArrayList();
 
         Usuarios.add(new Usuarios("stud", "123", "est"));//Usuarios de prueba
-        Usuarios.add(new Usuarios("teach", "456", "tch"));
+        Usuarios.add(new Usuarios("prof", "456", "tch"));
         Usuarios.add(new Usuarios("admin", "789", "bib"));
 
         Libros.add(new Libros("Harry Potter and the Goblet of Fire", "J.K. Rowling", 'f', "2000", 's'));
@@ -68,6 +68,39 @@ public class Lab2P2_GerardoHasbum {
                     }
                 }
             }
+
+            int tip = 0;//Inicio asignacion de tipo
+
+            if ("stud".equals(usuario)) {
+                tip =1;
+            }
+            if ("prof".equals(usuario)) {
+                tip = 2;
+            }
+            if ("admin".equals(usuario)) {
+                tip = 3;
+            }
+            String tipo = "";
+            
+            switch(tip){
+                case 1:
+                    tipo = "est";
+                    break;
+                    
+                case 2:
+                    tipo = "tch";
+                    break;
+                    
+                case 3:
+                    tipo = "bib";
+                    break;
+                    
+            }// tipo de usuario asignado
+            
+            
+            
+            System.out.println("Desea volver a ingresar al programa? [s/n]: ");
+            res_us = sc.next().charAt(0);
         }
 
         PrintLi(Libros);
