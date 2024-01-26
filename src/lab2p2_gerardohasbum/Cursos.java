@@ -44,6 +44,11 @@ public class Cursos {
     public void setPlat(String plat) {
         this.plat = plat;
     }
+
+    @Override
+    public String toString() {
+        return titulo + "\n Instructor: " + inst + "\n Duracion: " + dur + "\n Plataforma: " + plat;
+    }
     
     
 }

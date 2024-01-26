@@ -34,7 +34,10 @@ public class Usuarios {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Usuario: " + nom + "\n Contraseña: " + cont + "\n Tipo:" + tipo;
+    }
     
 }

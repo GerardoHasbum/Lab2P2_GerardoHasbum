@@ -54,7 +54,10 @@ public class Articulos {
     public void setDispo(char dispo) {
         this.dispo = dispo;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return titulo + "\n Autor: " + autor + "\n Tema: " + tema + "\n Fecha: " + fecha + "\n Disponibilidad: " + dispo;
+    }
     
 }
